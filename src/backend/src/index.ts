@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import {routes} from './controllers';
 import bodyParser from 'body-parser';
 import {bigIntTransformer} from "./transformers/big-int-transformer";
+import {errorHandler} from "./handlers/expressErrorHandler";
 //import swaggerUi, {SwaggerUiOptions} from "swagger-ui-express";
 
 const app: Application = express();
@@ -29,7 +30,10 @@ app.use('/api', routes);
 //     })
 // );
 
-// start the server
+// error handling
+app.use(errorHandler);
+
+// start service
 app.listen(process.env.BACK_PORT, () => {
     console.log(`server running : ${urlRoot}`);
 });
