@@ -11,11 +11,7 @@ const pool = mariadb.createPool({
 
 export async function fetchConnection(): Promise<PoolConnection> {
     try {
-        let conn = await pool.getConnection();
-        console.log("Total connections: ", pool.totalConnections());
-        console.log("Active connections: ", pool.activeConnections());
-        console.log("Idle connections: ", pool.idleConnections());
-        return conn;
+        return await pool.getConnection();
     }
     catch(err) {
         console.log(err);
