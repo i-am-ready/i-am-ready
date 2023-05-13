@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {PublicComponent} from "./public.component";
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('../../features/features.module').then(m => m.FeaturesModule),
+    component: PublicComponent,
+    loadChildren: () => import('../../features/public/public.module').then(m => m.PublicModule),
   }
 ];
 
