@@ -5,6 +5,9 @@ import { PublicRoutingModule } from './public-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PublicComponent } from './public.component';
 import {FlexModule} from "@angular/flex-layout";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import {FlexModule} from "@angular/flex-layout";
   imports: [
     CommonModule,
     PublicRoutingModule,
-    FlexModule
+    FlexModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
   ]
 })
 export class PublicModule { }

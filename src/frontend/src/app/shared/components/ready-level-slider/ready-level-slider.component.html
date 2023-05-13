@@ -1,0 +1,8 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="labels" fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="space-between center">
+    <div *ngFor="let label of labels">{{label}}</div>
+  </div>
+  <mat-slider min="1" [max]="max" step="1" >
+    <input matSliderThumb (valueChange)="levelChange($event)">
+  </mat-slider>
+</div>

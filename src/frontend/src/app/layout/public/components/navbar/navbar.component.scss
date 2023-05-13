@@ -1,8 +1,20 @@
 @import "src/styles/i-am-ready";
 
 .navbar {
-  background: $primary-dark;
+  background: $primary;
   color: white;
   height: 60px;
   padding: 10px 20px;
+}
+
+.lang {
+  margin-right: 8px;
+
+  span {
+    text-transform: uppercase;
+  }
+}
+
+button.lang {
+  color: white;
 }

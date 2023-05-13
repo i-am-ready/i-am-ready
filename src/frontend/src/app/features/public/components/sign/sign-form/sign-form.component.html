@@ -1,0 +1,26 @@
+<form fxLayout="column" [formGroup]="formGroup">
+
+  <mat-form-field>
+    <mat-label>{{'sign.form.email' | translate}}</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{'sign.form.name' | translate}}</mat-label>
+    <input matInput formControlName="phone">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{'sign.form.country' | translate}}</mat-label>
+    <input matInput formControlName="country">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'sign.form.birthdate' | translate}}</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthdate">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <iar-ready-level-slider formControlName="level"></iar-ready-level-slider>
+<div>
+  {{formGroup.getRawValue() | json}}
+</div>
+</form>
