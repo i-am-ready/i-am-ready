@@ -1,0 +1,17 @@
+@import "src/styles/responsive-tools";
+
+.layout {
+  height: 100%;
+
+  .content {
+    padding: 20px;
+    overflow: auto;
+    height: 100%;
+    @include lt-md {
+      padding: 10px;
+    }
+    @include lt-sm {
+      padding: 5px;
+    }
+  }
+}
