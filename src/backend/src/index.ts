@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import {routes} from './controllers';
 import bodyParser from 'body-parser';
 import {bigIntTransformer} from "./transformers/big-int-transformer";
-import {errorHandler} from "./handlers/expressErrorHandler";
+import {expressErrorHandler} from "./handlers/expressErrorHandler";
 //import swaggerUi, {SwaggerUiOptions} from "swagger-ui-express";
 
 const app: Application = express();
@@ -31,7 +31,10 @@ app.use('/api', routes);
 // );
 
 // error handling
-app.use(errorHandler);
+app.use(expressErrorHandler);
+process.on('uncaughtException', (error: Error) => {
+    console.error(`Uncaught Exception: ${error.message}`);
+});
 
 // start service
 app.listen(process.env.BACK_PORT, () => {

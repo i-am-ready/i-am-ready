@@ -1,3 +1,4 @@
+import 'express-async-errors';
 import express from 'express';
 import {Signature} from "../../models/signature";
 import {fetchByPhone, insertSignature, signatureExistsByPhone} from "../../repository/signatures.repository";
