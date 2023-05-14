@@ -4,5 +4,5 @@ import {ipGeolocationRoutes} from "./ip-geolocation/routes";
 
 export const routes = express.Router();
 
-routes.use(mobilizationRoutes);
+routes.use('/mobilization', mobilizationRoutes);
 routes.use('/ip-geolocation', ipGeolocationRoutes);

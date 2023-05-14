@@ -4,6 +4,7 @@
   "sign.form.phone": "Your mobile phone",
   "sign.form.level": "How ready are you ?",
   "sign.form.email": "Your e-mail address",
-  "sign.form.country": "Your country",
+  "country.selector.placeholder": "Select your country",
+  "country.selector.label": "Country",
   "end": ""
 }

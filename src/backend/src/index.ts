@@ -4,9 +4,20 @@ import {routes} from './controllers';
 import bodyParser from 'body-parser';
 import {bigIntTransformer} from "./transformers/big-int-transformer";
 import {expressErrorHandler} from "./handlers/expressErrorHandler";
+import cors from 'cors';
 //import swaggerUi, {SwaggerUiOptions} from "swagger-ui-express";
 
 const app: Application = express();
+
+// cors
+const allowedOrigins = [
+    'http://localhost:5500',
+    'http://localhost:4200',
+];
+const options: cors.CorsOptions = {
+    origin: allowedOrigins
+};
+app.use(cors(options));
 
 // body-parser
 app.use(bodyParser.json({ limit: '50mb', type: 'application/json', reviver: bigIntTransformer}));

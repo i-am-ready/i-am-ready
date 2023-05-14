@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {environment} from "../../environments/environment";
 
 /**
  * Represents the provider of configuration values for API services.
@@ -9,7 +10,7 @@ import { Injectable } from '@angular/core';
 export class ApiConfiguration {
 
     constructor() {
-        this.rootUrl = '';
+        this.rootUrl = environment.settings.apiRootUrl;
     }
     /**
      * Gets or sets the root URL where the API services are.
